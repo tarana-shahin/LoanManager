@@ -1,0 +1,38 @@
+
+<div class="form1">
+    <div class="card" style="width: 50rem;">
+<form #customerForm="ngForm" (ngSubmit)="onSubmit(customerForm)" class="normal-form">
+   
+            <div class="controles-container">
+                <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="customerService.selectedCustomer._id">
+                
+                    <input  type="text" name="firstname" #firstname="ngModel" [(ngModel)]="customerService.selectedCustomer.firstname"   placeholder="First Name*">
+                   
+               
+                    <input type="text" name="lastname" #lastname="ngModel" [(ngModel)]="customerService.selectedCustomer.lastname"  placeholder="Last Name">
+                    
+                
+                
+               
+                    <input type="text" name="emailAdress" #emailAdress="ngModel" [(ngModel)]="customerService.selectedCustomer.emailAdress"  placeholder="Email*">
+                    
+               
+                
+                    <input  type="text" name="phoneNumber" #phoneNumber="ngModel" [(ngModel)]="customerService.selectedCustomer.phoneNumber" placeholder="Mobile*">
+                    <!-- <mat-error *ngIf="service.form.controls['mobile'].errors?.required">This field is mandatory.</mat-error>
+            <mat-error *ngIf="service.form.controls['mobile'].errors?.minlength">Minimum 8 charactors needed.</mat-error> -->
+               
+              
+                    <input type="text" name="Address"  #Address="ngModel" [(ngModel)]="customerService.selectedCustomer.Address"  placeholder="Address">
+                   
+              
+
+                <div class="button-row">
+                    <button mat-raised-button color="primary"  [disabled]="!customerForm.valid"  type="submit"   >Submit</button>
+                    <button mat-raised-button color="warn"  (click)="resetForm(customerForm)"  >Clear</button>
+                </div>
+            </div>
+    
+</form>
+</div>
+</div>

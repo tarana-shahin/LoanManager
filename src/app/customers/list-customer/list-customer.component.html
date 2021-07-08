@@ -1,0 +1,113 @@
+
+<!-- (onclick)="onCreate()" -->
+<div class="search-div" >
+    <button mat-raised-button (onclick)="onCreate()"  >
+      <mat-icon>add</mat-icon>Create
+    </button>
+    <mat-form-field class="search-form-field" floatLabel="never">
+      <input matInput  placeholder="Search" autocomplete="off" >
+      <button mat-button matSuffix mat-icon-button aria-label="Clear" >
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+    <!-- <button (onclick)="onCheckk()">Test</button> -->
+  </div>
+
+  <div>
+  <button type="button" (mouseDown)="onCheckk()">Test</button>
+  </div>
+  <button (click)="onSave()">Add</button>
+
+
+  
+  <div class="mat-elevation-z8">
+
+
+
+
+
+    
+      <table  id="customers" class="responsive-table highlight">
+          <thead>
+            <tr>
+              <th>FirstName</th>
+              <th>LastName</th>
+              <th>Phonenumber</th>
+              <th>EmailAddress</th>
+              <th>Address</th>
+
+            </tr>
+          </thead>
+          <tr *ngFor="let cust of customerService.customers">
+            <td>{{cust.firstname}}</td>
+            <td>{{cust.lastname}}</td>
+            <td>{{cust.phoneNumber}}</td>
+            <td>{{cust.emailAdress}}</td>
+            <td>{{cust.Address}}</td>
+            <td>
+                <a class="action-btn" >
+                  <i class="material-icons">edit</i>
+                </a>
+                <a class="action-btn" >
+                  <i class="material-icons">delete</i>
+                </a>
+              </td>
+          </tr>
+        </table>
+ 
+
+
+
+
+
+    <!-- <mat-table >
+      <ng-container matColumnDef="fullName">
+        <mat-header-cell *matHeaderCellDef  mat-sort-header>Customer Id</mat-header-cell>
+        <mat-cell >Tarana</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="email">
+        <mat-header-cell *matHeaderCellDef  mat-sort-header>First Name</mat-header-cell>
+        <mat-cell *matCellDef="let element">tara@gmail.com</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="mobile">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>LastName</mat-header-cell>
+        <mat-cell *matCellDef="let element">9205309387</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="city">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Phone No</mat-header-cell>
+        <mat-cell *matCellDef="let element">New Delhi</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="departmentName">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Email Address</mat-header-cell>
+        <mat-cell *matCellDef="let element">CS</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="departmentName">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Address</mat-header-cell>
+        <mat-cell *matCellDef="let element">CS</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef></mat-header-cell>
+        <mat-cell *matCellDef="let row">
+          <button mat-icon-button><mat-icon>launch</mat-icon></button>
+          <button mat-icon-button color="warn"><mat-icon>delete_outline</mat-icon></button>
+        </mat-cell>
+      </ng-container> -->
+      <!-- <ng-container matColumnDef="loading">
+        <mat-footer-cell *matFooterCellDef colspan="6">
+          Loading data...
+        </mat-footer-cell>
+      </ng-container>
+      <ng-container matColumnDef="noData">
+        <mat-footer-cell *matFooterCellDef colspan="6">
+          No data.
+        </mat-footer-cell>
+      </ng-container> -->
+        
+      <!-- <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row> -->
+
+      <!-- <mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{'hide':listData!=null}"></mat-footer-row>
+      <mat-footer-row *matFooterRowDef="['noData']" [ngClass]="{'hide':!(listData!=null && listData.data.length==0)}"></mat-footer-row> -->
+    <!-- </mat-table>
+    <mat-paginator  showFirstLastButtons></mat-paginator> -->
+  </div>  
